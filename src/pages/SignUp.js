@@ -63,6 +63,7 @@ export const SignUp = () => {
   }
   else{
     alert("successfully registered")
+    
     value.setLogin(true);
     navigate("/login")
   }
