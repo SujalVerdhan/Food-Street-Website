@@ -3,7 +3,10 @@ const router = express.Router();
 const User = require("../models/Users");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const jwtSecret="MyNameisSujal"
+require('dotenv').config()
+ 
+const jwtSecret=process.env.JWTSECRET
+
 router.post("/createuser", async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const secPassword = await bcrypt.hash(req.body.password, salt);

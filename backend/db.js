@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
+require('dotenv').config()
 const mongoDB = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://Sujal_Verdhan:Sujal%40123@cluster0.am7bdua.mongodb.net/foodstreet"
+    process.env.DB
     );
     console.log("db  connected successfully");
     const fetcheddata = mongoose.connection.db.collection("food_items");
